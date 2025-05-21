@@ -238,7 +238,7 @@ describe('Basic user flow for Website', () => {
 //it('Checking the localStorage to make sure cart is correct', async () => {
     const cart = await page.evaluate(() => localStorage.getItem('cart'));
     expect(cart).toBe('[]');
-});
+
 
 
 
