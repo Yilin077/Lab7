@@ -235,9 +235,9 @@ describe('Basic user flow for Website', () => {
   // cart being empty
   it('Checking the localStorage to make sure cart is correct', async () => {
     console.log('Checking the localStorage...');
-it('Checking the localStorage to make sure cart is correct', async () => {
-  const cart = await page.evaluate(() => localStorage.getItem('cart'));
-  expect(cart).toBe('[]');
+//it('Checking the localStorage to make sure cart is correct', async () => {
+    const cart = await page.evaluate(() => localStorage.getItem('cart'));
+    expect(cart).toBe('[]');
 });
 
 
