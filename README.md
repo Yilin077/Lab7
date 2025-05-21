@@ -8,7 +8,7 @@ Because running automated tests within a GitHub Action on every push ensures tha
 3)Navigation Mode: This mode simulates a full page load, including navigation to the URL, running scripts, and measuring performance metrics like load time, interactivity, and layout stability. It's ideal for testing the user’s first visit experience.
 
 Snapshot Mode: This captures the current state of a page without reloading it. It’s useful for testing specific views or components of a page for things like accessibility, SEO, and best practices, but not performance.
-Optimize and compress images — Use modern formats (like WebP) and properly sized images to improve load time.
+4)Optimize and compress images — Use modern formats (like WebP) and properly sized images to improve load time.
 
 Reduce unused JavaScript/CSS — Eliminate or defer unnecessary scripts and styles to speed up interactivity.
 
