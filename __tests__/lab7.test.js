@@ -97,7 +97,7 @@ describe('Basic user flow for Website', () => {
     await button.click();
     const buttonText = await (await button.getProperty('innerText')).jsonValue();
     expect(buttonText).toBe('Remove from Cart');
-  });
+  
 
   }, 2500);
 
