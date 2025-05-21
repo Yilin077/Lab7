@@ -48,6 +48,7 @@ describe('Basic user flow for Website', () => {
   it('Make sure <product-item> elements are populated', async () => {
     console.log('Checking to make sure <product-item> elements are populated...');
 
+    let allArePopulated = true;
     // Query all <product-item> elements and get their data property
     const prodItemsData = await page.$$eval('product-item', prodItems => {
       return prodItems.map(item => {
@@ -55,8 +56,7 @@ describe('Basic user flow for Website', () => {
       });
     });
 
-    let allArePopulated = true;
-
+    
     // Check every product item for non-empty title, price, and image
     for (let i = 0; i < prodItemsData.length; i++) {
       const item = prodItemsData[i];
