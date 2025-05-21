@@ -21,7 +21,7 @@ describe('Basic user flow for Website', () => {
   // Check to make sure that all 20 <product-item> elements have data in them
   // We use .skip() here because this test has a TODO that has not been completed yet.
   // Make sure to remove the .skip after you finish the TODO. 
-  it.skip('Make sure <product-item> elements are populated', async () => {
+  it.('Make sure <product-item> elements are populated', async () => {
     console.log('Checking to make sure <product-item> elements are populated...');
 
     // Start as true, if any don't have data, swap to false
@@ -46,6 +46,28 @@ describe('Basic user flow for Website', () => {
     // Expect allArePopulated to still be true
     expect(allArePopulated).toBe(true);
 
+it('Make sure <product-item> elements are populated', async () => {
+  console.log('Checking to make sure <product-item> elements are populated...');
+
+  // Query all <product-item> elements and get their data property
+  const prodItemsData = await page.$$eval('product-item', prodItems => {
+    return prodItems.map(item => {
+      return item.data;
+    });
+  });
+
+  let allArePopulated = true;
+
+  // Check every product item for non-empty title, price, and image
+  for (let i = 0; i < prodItemsData.length; i++) {
+    const item = prodItemsData[i];
+    if (!item.title || item.title.length === 0) allArePopulated = false;
+    if (!item.price || item.price.length === 0) allArePopulated = false;
+    if (!item.image || item.image.length === 0) allArePopulated = false;
+  }
+
+  expect(allArePopulated).toBe(true);
+}, 10000);
 
 
     /**
