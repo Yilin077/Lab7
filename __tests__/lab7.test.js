@@ -184,17 +184,17 @@ describe('Basic user flow for Website', () => {
     console.log('Checking number of items in cart on screen...');
   //it('Checking number of items in cart on screen after removing from cart', async () => {
   const prodItems = await page.$$('product-item');
-  for (const item of prodItems) {
-    const shadowRoot = await item.getProperty('shadowRoot');
-    const button = await shadowRoot.$('button');
-    const text = await (await button.getProperty('innerText')).jsonValue();
-    if (text === 'Remove from Cart') {
-      await button.click();
+    for (const item of prodItems) {
+      const shadowRoot = await item.getProperty('shadowRoot');
+      const button = await shadowRoot.$('button');
+      const text = await (await button.getProperty('innerText')).jsonValue();
+      if (text === 'Remove from Cart') {
+        await button.click();
+      }
     }
-  }
 
-  const cartCount = await page.$eval('#cart-count', el => el.innerText);
-  expect(cartCount).toBe('0');
+    const cartCount = await page.$eval('#cart-count', el => el.innerText);
+    expect(cartCount).toBe('0');
 });
 
     /**
