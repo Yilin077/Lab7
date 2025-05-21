@@ -56,7 +56,14 @@ describe('Basic user flow for Website', () => {
       });
     });
 
-    
+    for (let i = 0; i < prodItemsData.length; i++) {
+    const product = prodItemsData[i];
+    console.log(`Checking product item ${i + 1}/${prodItemsData.length}`);
+    if (!product || product.title.length === 0 || product.price.length === 0 || product.image.length === 0) {
+      allArePopulated = false;
+      break;
+    }
+  }
     // Check every product item for non-empty title, price, and image
     for (let i = 0; i < prodItemsData.length; i++) {
       const item = prodItemsData[i];
