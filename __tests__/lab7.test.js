@@ -233,8 +233,9 @@ describe('Basic user flow for Website', () => {
 
   // Checking to make sure that localStorage for the cart is as we'd expect for the
   // cart being empty
-  it.skip('Checking the localStorage to make sure cart is correct', async () => {
+  i('Checking the localStorage to make sure cart is correct', async () => {
     console.log('Checking the localStorage...');
+
 
     /**
      **** TODO - STEP 8 **** 
