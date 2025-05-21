@@ -208,9 +208,19 @@ describe('Basic user flow for Website', () => {
 
   // Checking to make sure that it remembers us removing everything from the cart
   // after we refresh the page
-  it.skip('Checking number of items in cart on screen after reload', async () => {
+  it('Checking number of items in cart on screen after reload', async () => {
     console.log('Checking number of items in cart on screen after reload...');
+    await page.reload();
+    const prodItems = await page.$$('product-item');
+    for (const item of prodItems) {
+      const shadowRoot = await item.getProperty('shadowRoot');
+      const button = await shadowRoot.$('button');
+      const text = await (await button.getProperty('innerText')).jsonValue();
+      expect(text).toBe('Add to Cart');
+    }
 
+    const cartCount = await page.$eval('#cart-count', el => el.innerText);
+    expect(cartCount).toBe('0');
     /**
      **** TODO - STEP 7 **** 
      * Reload the page once more, then go through each <product-item> to make sure that it has remembered nothing
