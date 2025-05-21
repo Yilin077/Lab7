@@ -180,10 +180,10 @@ describe('Basic user flow for Website', () => {
 
   // Checking to make sure that if you remove all of the items from the cart that the cart
   // number in the top right of the screen is 0
-  it.skip('Checking number of items in cart on screen after removing from cart', async () => {
+  it('Checking number of items in cart on screen after removing from cart', async () => {
     console.log('Checking number of items in cart on screen...');
   //it('Checking number of items in cart on screen after removing from cart', async () => {
-  const prodItems = await page.$$('product-item');
+    const prodItems = await page.$$('product-item');
     for (const item of prodItems) {
       const shadowRoot = await item.getProperty('shadowRoot');
       const button = await shadowRoot.$('button');
