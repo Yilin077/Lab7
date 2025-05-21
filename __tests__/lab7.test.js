@@ -106,7 +106,7 @@ describe('Basic user flow for Website', () => {
   it('Checking number of items in cart on screen', async () => {
     console.log('Checking number of items in cart on screen...');
 
-    it('Checking number of items in cart on screen', async () => {
+    //it('Checking number of items in cart on screen', async () => {
     const prodItems = await page.$$('product-item');
     for (const item of prodItems) {
       const shadowRoot = await item.getProperty('shadowRoot');
