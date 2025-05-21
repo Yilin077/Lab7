@@ -182,7 +182,7 @@ describe('Basic user flow for Website', () => {
   // number in the top right of the screen is 0
   it.skip('Checking number of items in cart on screen after removing from cart', async () => {
     console.log('Checking number of items in cart on screen...');
-it('Checking number of items in cart on screen after removing from cart', async () => {
+  //it('Checking number of items in cart on screen after removing from cart', async () => {
   const prodItems = await page.$$('product-item');
   for (const item of prodItems) {
     const shadowRoot = await item.getProperty('shadowRoot');
