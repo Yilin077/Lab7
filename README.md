@@ -12,4 +12,4 @@ Snapshot Mode: This captures the current state of a page without reloading it. I
 
 Reduce unused JavaScript/CSS — Eliminate or defer unnecessary scripts and styles to speed up interactivity.
 
-Improve accessibility — Ensure elements have proper labels, contrast
+Improve accessibility — Ensure elements have proper labels, contrast, and alt text for screen readers
