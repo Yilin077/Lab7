@@ -90,14 +90,14 @@ describe('Basic user flow for Website', () => {
      * Once you have the innerText property, use innerText.jsonValue() to get the text value of it
      * Remember to remove the .skip from this it once you are finished writing this test.
      */
-it('Clicking the "Add to Cart" button should change button text', async () => {
-  const prodItem = await page.$('product-item');
-  const shadowRoot = await prodItem.getProperty('shadowRoot');
-  const button = await shadowRoot.$('button');
-  await button.click();
-  const buttonText = await (await button.getProperty('innerText')).jsonValue();
-  expect(buttonText).toBe('Remove from Cart');
-});
+  //it('Clicking the "Add to Cart" button should change button text', async () => {
+    const prodItem = await page.$('product-item');
+    const shadowRoot = await prodItem.getProperty('shadowRoot');
+    const button = await shadowRoot.$('button');
+    await button.click();
+    const buttonText = await (await button.getProperty('innerText')).jsonValue();
+    expect(buttonText).toBe('Remove from Cart');
+  });
 
   }, 2500);
 
