@@ -195,7 +195,7 @@ describe('Basic user flow for Website', () => {
 
     const cartCount = await page.$eval('#cart-count', el => el.innerText);
     expect(cartCount).toBe('0');
-});
+
 
     /**
      **** TODO - STEP 6 **** 
