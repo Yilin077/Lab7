@@ -167,6 +167,7 @@ describe('Basic user flow for Website', () => {
 });
 
 
+
     /**
      **** TODO - STEP 5 **** 
      * At this point the item 'cart' in localStorage should be 
