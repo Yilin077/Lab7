@@ -161,6 +161,7 @@ describe('Basic user flow for Website', () => {
   // Check to make sure that the cart in localStorage is what you expect
   it.skip('Checking the localStorage to make sure cart is correct', async () => {
 
+    
     /**
      **** TODO - STEP 5 **** 
      * At this point the item 'cart' in localStorage should be 
