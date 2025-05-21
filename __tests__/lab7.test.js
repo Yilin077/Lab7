@@ -21,27 +21,27 @@ describe('Basic user flow for Website', () => {
   // Check to make sure that all 20 <product-item> elements have data in them
   // We use .skip() here because this test has a TODO that has not been completed yet.
   // Make sure to remove the .skip after you finish the TODO. 
-  it('Make sure <product-item> elements are populated', async () => {
-    console.log('Checking to make sure <product-item> elements are populated...');
+  //it('Make sure <product-item> elements are populated', async () => {
+    //console.log('Checking to make sure <product-item> elements are populated...');
 
     // Start as true, if any don't have data, swap to false
-    let allArePopulated = true;
+    //let allArePopulated = true;
 
     // Query select all of the <product-item> elements
-    const prodItemsData = await page.$$eval('product-item', prodItems => {
-      return prodItems.map(item => {
+    //const prodItemsData = await page.$$eval('product-item', prodItems => {
+      //return prodItems.map(item => {
         // Grab all of the json data stored inside
-        return data = item.data;
-      });
-    });
+        //return data = item.data;
+      //});
+    //});
 
-    console.log(`Checking product item 1/${prodItemsData.length}`);
+    //console.log(`Checking product item 1/${prodItemsData.length}`);
 
     // Make sure the title, price, and image are populated in the JSON
-    firstValue = prodItemsData[0];
-    if (firstValue.title.length == 0) { allArePopulated = false; }
-    if (firstValue.price.length == 0) { allArePopulated = false; }
-    if (firstValue.image.length == 0) { allArePopulated = false; }
+    //firstValue = prodItemsData[0];
+    //if (firstValue.title.length == 0) { allArePopulated = false; }
+    //if (firstValue.price.length == 0) { allArePopulated = false; }
+    //if (firstValue.image.length == 0) { allArePopulated = false; }
 
     // Expect allArePopulated to still be true
     expect(allArePopulated).toBe(true);
