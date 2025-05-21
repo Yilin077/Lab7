@@ -161,7 +161,11 @@ describe('Basic user flow for Website', () => {
   // Check to make sure that the cart in localStorage is what you expect
   it.skip('Checking the localStorage to make sure cart is correct', async () => {
 
-    
+    it('Checking the localStorage to make sure cart is correct', async () => {
+  const cart = await page.evaluate(() => localStorage.getItem('cart'));
+  expect(cart).toBe('[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]');
+});
+
     /**
      **** TODO - STEP 5 **** 
      * At this point the item 'cart' in localStorage should be 
