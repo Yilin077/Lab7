@@ -103,23 +103,23 @@ describe('Basic user flow for Website', () => {
 
   // Check to make sure that after clicking "Add to Cart" on every <product-item> that the Cart
   // number in the top right has been correctly updated
-  it.skip('Checking number of items in cart on screen', async () => {
+  it('Checking number of items in cart on screen', async () => {
     console.log('Checking number of items in cart on screen...');
 
     it('Checking number of items in cart on screen', async () => {
-  const prodItems = await page.$$('product-item');
-  for (const item of prodItems) {
-    const shadowRoot = await item.getProperty('shadowRoot');
-    const button = await shadowRoot.$('button');
-    const text = await (await button.getProperty('innerText')).jsonValue();
-    if (text === 'Add to Cart') {
-      await button.click();
+    const prodItems = await page.$$('product-item');
+    for (const item of prodItems) {
+      const shadowRoot = await item.getProperty('shadowRoot');
+      const button = await shadowRoot.$('button');
+      const text = await (await button.getProperty('innerText')).jsonValue();
+      if (text === 'Add to Cart') {
+        await button.click();
+      }
     }
-  }
 
-  const cartCount = await page.$eval('#cart-count', el => el.innerText);
-  expect(cartCount).toBe('20');
-});
+    const cartCount = await page.$eval('#cart-count', el => el.innerText);
+    expect(cartCount).toBe('20');
+
 
     /**
      **** TODO - STEP 3 **** 
