@@ -52,7 +52,7 @@ describe('Basic user flow for Website', () => {
     // Query all <product-item> elements and get their data property
     const prodItemsData = await page.$$eval('product-item', prodItems => {
       return prodItems.map(item => {
-        return item.data;
+        return data = item.data;
       });
     });
 
