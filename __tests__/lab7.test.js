@@ -134,6 +134,19 @@ describe('Basic user flow for Website', () => {
   // Check to make sure that after you reload the page it remembers all of the items in your cart
   it.skip('Checking number of items in cart on screen after reload', async () => {
     console.log('Checking number of items in cart on screen after reload...');
+it('Checking number of items in cart on screen after reload', async () => {
+  await page.reload();
+  const prodItems = await page.$$('product-item');
+  for (const item of prodItems) {
+    const shadowRoot = await item.getProperty('shadowRoot');
+    const button = await shadowRoot.$('button');
+    const text = await (await button.getProperty('innerText')).jsonValue();
+    expect(text).toBe('Remove from Cart');
+  }
+
+  const cartCount = await page.$eval('#cart-count', el => el.innerText);
+  expect(cartCount).toBe('20');
+});
 
     /**
      **** TODO - STEP 4 **** 
